@@ -1,0 +1,33 @@
+/* These are my custom variables */
+
+/* Color palette */
+
+// old
+// $primary: #BE5109;
+// $secondary: #F1AB10;
+// $light: #d7bf8e;
+// $dark: #3d1e0c;
+// $success: #8A7992;
+// $light_transparent: rgba(215, 191, 142, 0.85);
+
+//new
+$primary: #F39C12;
+$secondary: #FCB544;
+$light: #FFC76D;
+$dark: #362203;
+$light_transparent: rgba(255, 199, 109, 0.85);
+
+/* Fonts */
+
+$enable-responsive-font-sizes: true;
+
+//Open Sans sans serif
+
+//Merriweather monospace
+
+$font-family-sans-serif: 'Open Sans',
+sans-serif;
+$font-family-monospace: 'Merriweather',
+serif;
+
+@import 'bootstrap/scss/bootstrap';

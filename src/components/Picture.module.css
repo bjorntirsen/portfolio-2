@@ -1,0 +1,7 @@
+.landing_img {
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
