@@ -3,3 +3,10 @@
   overflow: hidden;
   position: relative;
 }
+
+.outer_tile {
+  overflow: hidden;
+  /* padding-top: 92px !important; */
+  position: relative;
+  height: 100%;
+}

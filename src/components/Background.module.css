@@ -9,15 +9,16 @@
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  /* later move this */
+}
+
+.background_landing {
   background-image: url('../images/autumn_road_w640.jpg');
   overflow: hidden;
 }
 
-/* .background_landing {
-  background-image: url('../../public/images/autumn_road_w640.jpg');
-  overflow: hidden;
-} */
+.background_projects {
+  background-image: url('../images/autumn_road_w640.jpg');
+}
 
 .zoom {
   transform: scale(1.1);

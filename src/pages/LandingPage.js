@@ -3,7 +3,6 @@ import React from 'react';
 import classes from './LandingPage.module.css';
 
 import { Container } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import Background from '../components/Background';
 import OuterTile from '../components/OuterTile';
 import Wrapper from '../components/Wrapper';
@@ -12,8 +11,8 @@ import Picture from '../components/Picture';
 const LandingPage = () => {
   return (
     <Wrapper>
-      <OuterTile>
-        <Background />
+      <OuterTile forPage='Landing'>
+        <Background forPage='Landing'/>
         <Container className={`${classes.landing_container} bg-light pb-4`}>
           <h1 className='fw-bolder font-monospace pt-4 text-center text-dark text-uppercase'>
             Developing the Developer
@@ -27,7 +26,7 @@ const LandingPage = () => {
             to graduating as a Junior Fullstack Web Developer in May 2022.
           </p>
           <div className='d-flex justify-content-center'>
-            <Button className={`btn-lg fw-bold`}>Enter</Button>
+            <a class="btn btn-lg btn-primary fw-bold" href="/projects" role="button">Enter</a>
           </div>
         </Container>
       </OuterTile>
