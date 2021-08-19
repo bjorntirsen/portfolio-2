@@ -35,7 +35,7 @@ const ProjectCard = (props) => {
           <a href={props.values.siteLink} className='btn btn-primary m-1'>
             Link To Site
           </a>
-          <WhatILearnedModal values={props.values.whatILearned} />
+          <WhatILearnedModal title={props.values.title} values={props.values.whatILearned} />
           <a href={props.values.githubRepo} className='btn btn-primary m-1'>
             GitHub Repo
           </a>
