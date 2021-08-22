@@ -2,20 +2,32 @@ import React from 'react';
 
 import classes from './WhatILearnedModal.module.css';
 
-
 const WhatILearnedSection = (props) => {
   return (
     <>
-      <div class='align-items-center d-flex'>
-        {props.values.icons.map((icon) => {
+      <div className='align-items-center d-flex'>
+        {props.values.icons.map((icon, index) => {
           if (icon.startsWith('fa')) {
-            return <i class={`fa-3x ${icon} m-1`} title={icon}></i>;
+            return (
+              <i
+                className={`fa-3x ${icon} m-1`}
+                title={icon}
+                key={props.parentKey + index}
+              ></i>
+            );
           } else {
-            return <span class={`${classes.emoji} m-1`}>{icon}</span>;
+            return (
+              <span
+                className={`${classes.emoji} m-1`}
+                key={props.parentKey + index}
+              >
+                {icon}
+              </span>
+            );
           }
         })}
       </div>
-      <p class='text-center'>{props.values.paragraph}</p>
+      <p className='text-center'>{props.values.paragraph}</p>
     </>
   );
 };

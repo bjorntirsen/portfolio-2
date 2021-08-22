@@ -15,18 +15,24 @@ const WhatILearnedModal = (props) => {
       <Button variant='secondary' className='m-1' onClick={handleShow}>
         What I Learned
       </Button>
-      <Modal show={show} onHide={handleClose} className={classes.rounded}>
+      <Modal show={show} onHide={handleClose} className={`${classes.rounded}`}>
         <div className='bg-light'>
-          <Modal.Header className='modal-header' closeButton >
+          <Modal.Header className='modal-header' closeButton>
             <Modal.Title className='font-weight-bold font-monospace text-uppercase'>
-              {props.title} - What I Learned
+              {props.values.title} - What I Learned
             </Modal.Title>
           </Modal.Header>
           <Modal.Body
             className={`${classes.modal_light_body} align-items-center d-flex flex-column`}
           >
-            {props.values.map((section) => {
-              return <WhatILearnedSection values={section} />;
+            {props.values.whatILearned.map((section, index) => {
+              return (
+                <WhatILearnedSection
+                  values={section}
+                  key={props.values._id + index}
+                  parentKey={props.values._id + index}
+                />
+              );
             })}
           </Modal.Body>
           <Modal.Footer className='d-flex justify-content-center'>
