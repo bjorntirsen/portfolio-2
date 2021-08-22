@@ -26,7 +26,7 @@ const LandingPage = () => {
             to graduating as a Junior Fullstack Web Developer in May 2022.
           </p>
           <div className='d-flex justify-content-center'>
-            <a class="btn btn-lg btn-primary fw-bold" href="/projects" role="button">Enter</a>
+            <a className="btn btn-lg btn-primary fw-bold" href="/projects" role="button">Enter</a>
           </div>
         </Container>
       </OuterTile>
