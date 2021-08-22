@@ -17,15 +17,32 @@ const ProjectsPage = () => {
       <OuterTile>
         <Background />
         <Container>
-          <Row xs={1} sm={1} md={2} lg={3} xl={3} xxl={4} className='g-3 my-2'>
-            {projects.projects.length === 0 && <p>Fetching projects...</p>}
+          {projects.projects.length === 0 && (
+            <div className='d-flex justify-content-center align-items-center'>
+              <div className='bg-light p-4 m-3 rounded-3'>
+                <p className='my-auto font-monospace fw-bold'>
+                  Fetching projects, please wait...
+                </p>
+              </div>
+            </div>
+          )}
 
-            {projects.projects.length > 0 &&
-              Object.entries(projects.projects).map((item) => {
+          {projects.projects.length > 0 && (
+            <Row
+              xs={1}
+              sm={1}
+              md={2}
+              lg={3}
+              xl={3}
+              xxl={4}
+              className='g-3 my-2'
+            >
+              {Object.entries(projects.projects).map((item) => {
                 const value = item[1];
                 return <ProjectCard key={value._id} values={value} />;
               })}
-          </Row>
+            </Row>
+          )}
         </Container>
       </OuterTile>
     </Wrapper>
