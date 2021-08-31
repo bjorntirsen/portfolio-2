@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 import WhatILearnedModal from './WhatILearnedModal';
+import Modal from './../components/UI/Modal';
 
 import classes from './ProjectCard.module.css';
 
@@ -36,6 +37,11 @@ const ProjectCard = (props) => {
             Link To Site
           </a>
           <WhatILearnedModal values={props.values} />
+          <Modal
+            title={`What I learned from ${props.values.title}`}
+            message={props.values.subtitle}
+            values={props.values}
+          />
           <a href={props.values.githubRepo} className='btn btn-primary m-1'>
             GitHub Repo
           </a>
