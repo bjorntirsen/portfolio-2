@@ -30,4 +30,14 @@ sans-serif;
 $font-family-monospace: 'Merriweather',
 serif;
 
+body {
+  background-color: #FFC76D;
+}
+
+.modal-open {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 @import 'bootstrap/scss/bootstrap';

@@ -7,17 +7,36 @@ import WhatILearnedSection from '../WhatILearnedSection';
 import classes from './Modal.module.css';
 
 const Modal = (props) => {
+  const [isShowing, setIsShowing] = useState(false);
+
+  const handleEscape = useCallback((e) => {
+    if (e.keyCode === 27) setIsShowing(false);
+  }, []);
+
+  useEffect(() => {
+    if (isShowing) document.addEventListener('keydown', handleEscape, false);
+  }, [handleEscape, isShowing]);
+
+  useEffect(() => {
+    document.body.classList.toggle('modal-open', isShowing);
+  },[isShowing])
+
+  const toggleShow = () => {
+    setIsShowing(!isShowing);
+  };
+
   const Backdrop = (props) => {
     return <div className={classes.backdrop} onClick={props.onConfirm}></div>;
   };
 
   const ModalOverlay = (props) => {
     return (
-      <Card className={classes.modal}>
+      <div className={classes.modal}>
+      <Card className={classes.content}>
         <header className={`${classes.header} text-center`}>
           <h2>{props.title}</h2>
         </header>
-        <div className={`${classes.content} align-items-center d-flex flex-column`}>
+        <div className={`${classes.body} align-items-center d-flex flex-column`}>
           {props.values.whatILearned.map((section, index) => {
             return (
               <WhatILearnedSection
@@ -31,41 +50,31 @@ const Modal = (props) => {
         <footer className={classes.footer}>
           <Button onClick={props.onConfirm}>Close</Button>
         </footer>
-      </Card>
+      </Card></div>
     );
   };
-  const [isShowing, setIsShowing] = useState(false);
 
-  const handleEscape = useCallback((e) => {
-    if (e.keyCode === 27) setIsShowing(false);
-  }, []);
-
-  useEffect(() => {
-    if (isShowing) document.addEventListener('keydown', handleEscape, false);
-  }, [handleEscape, isShowing]);
-
-  const toggleShow = () => {
-    setIsShowing(!isShowing);
-  };
-
-  return (
-    <>
-      <Button variant='secondary' onClick={toggleShow}>
-        New What I Learned
-      </Button>
-      {ReactDOM.createPortal(
-        isShowing ? <Backdrop onConfirm={toggleShow} /> : null,
-        document.getElementById('modal-root')
-      )}
-      {ReactDOM.createPortal(
-        isShowing ? (
-          <ModalOverlay
+  const Dialog = () => {
+    return (
+      <div className={classes.dialog}>
+        <Backdrop onConfirm={toggleShow} />
+        <ModalOverlay
             title={props.title}
             message={props.message}
             onConfirm={toggleShow}
             values={props.values}
           />
-        ) : null,
+      </div>
+    )
+  }
+
+  return (
+    <>
+      <Button variant='secondary' onClick={toggleShow}>
+        What I Learned
+      </Button>
+      {ReactDOM.createPortal(
+        isShowing ? <Dialog /> : null,
         document.getElementById('modal-root')
       )}
     </>

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Card, Col } from 'react-bootstrap';
 
-import WhatILearnedModal from './WhatILearnedModal';
 import Modal from './../components/UI/Modal';
 
 import classes from './ProjectCard.module.css';
@@ -33,18 +32,21 @@ const ProjectCard = (props) => {
           <p className='card-text '>{props.values.description}</p>
         </Card.Body>
         <Card.Footer className='text-center'>
-          <a href={props.values.siteLink} className='btn btn-primary m-1'>
-            Link To Site
-          </a>
-          <WhatILearnedModal values={props.values} />
+          {props.values.siteLink ? (
+            <a href={props.values.siteLink} className='btn btn-primary m-1'>
+              Link To Site
+            </a>
+          ) : null}
           <Modal
             title={`What I learned from ${props.values.title}`}
             message={props.values.subtitle}
             values={props.values}
           />
-          <a href={props.values.githubRepo} className='btn btn-primary m-1'>
-            GitHub Repo
-          </a>
+          {props.values.githubRepo ? (
+            <a href={props.values.githubRepo} className='btn btn-primary m-1'>
+              GitHub Repo
+            </a>
+          ) : null}
         </Card.Footer>
       </Card>
     </Col>

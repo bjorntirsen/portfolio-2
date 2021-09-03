@@ -5,3 +5,8 @@
 .emoji {
   font-size: 2.6rem;
 }
+
+.rounded {
+  box-shadow: 0 2px 8px rbga(0, 0, 0, 0.26);
+  border-radius: 10px;
+}
