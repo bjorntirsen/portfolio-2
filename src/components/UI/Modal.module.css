@@ -57,16 +57,6 @@
 
 @media (min-width: 768px) {
   .modal {
-    left: calc(50% - 20rem);
     width: 40rem;
-    top: 30vh;
-  }
-}
-
-@media (min-width: 768px) {
-  .modal {
-    left: calc(50% - 20rem);
-    width: 40rem;
-    top: 30vh;
   }
 }
