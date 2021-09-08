@@ -14,7 +14,7 @@ import AboutMeCard from '../components/cards/AboutMeCard';
 const AboutPage = () => {
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation current='about' />
       <OuterTile>
         <Background />
         <Container>

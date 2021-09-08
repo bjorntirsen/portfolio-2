@@ -13,7 +13,7 @@ const ProjectsPage = () => {
 
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation current='projects' />
       <OuterTile>
         <Background />
         <Container>

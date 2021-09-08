@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Navigation = () => {
+const Navigation = (props) => {
+  console.log(props.current);
+  const onProjects = props.current === 'projects' ? 'active' : '';
+  const onAbout = props.current === 'about' ? 'active' : '';
+
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
       <div className='container-fluid'>
@@ -27,11 +31,20 @@ const Navigation = () => {
             </li>
             <li className='nav-item'>
               <a
-                className='nav-link active'
+                className={`nav-link ${onProjects}`}
                 aria-current='page'
                 href='/projects'
               >
                 Projects
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a
+                className={`nav-link ${onAbout}`}
+                aria-current='page'
+                href='/about'
+              >
+                About Me
               </a>
             </li>
           </ul>
