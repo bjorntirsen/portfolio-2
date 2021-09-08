@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from 'react-bootstrap';
 
-import Card from './Card';
+import Card from '../cards/Card';
 import WhatILearnedSection from '../WhatILearnedSection';
 import classes from './Modal.module.css';
 

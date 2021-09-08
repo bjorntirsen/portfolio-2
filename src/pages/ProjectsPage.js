@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import Background from '../components/Background';
 import Navigation from '../components/Navigation';
 import OuterTile from '../components/OuterTile';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/cards/ProjectCard';
 import Wrapper from '../components/Wrapper';
 import { ProjectsContext } from '../contexts/projects-context';
 

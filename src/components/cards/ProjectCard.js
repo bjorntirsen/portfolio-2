@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Card, Col } from 'react-bootstrap';
 
-import Modal from './../components/UI/Modal';
+import Modal from '../UI/Modal';
 
 import classes from './ProjectCard.module.css';
 
