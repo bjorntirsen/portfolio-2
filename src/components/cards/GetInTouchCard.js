@@ -8,13 +8,13 @@ const GetInTouchCard = () => {
     <Card className='mb-3'>
       <h2 className='font-monospace text-center h3 pt-3'>Get in touch with me:</h2>
       <div className='d-flex justify-content-center align-items-center'>
-        <div className='bg-light p-4 m-3 rounded-3'>
+        <div className='bg-light m-3 rounded-3'>
           <div className='p-3'>
             <Picture />
           </div>
 
-          <div className='p-2 d-flex justify-content-center align-items-center'>
-            <div className='m-3 flex-fill d-flex justify-content-center align-items-center'>
+          <div className='d-flex justify-content-center align-items-center'>
+            <div className='m-2 flex-fill d-flex justify-content-center align-items-center'>
               <a
                 className='btn btn-primary btn-lg m-auto'
                 href='mailto:bjorntirsen@gmail.com'
@@ -23,7 +23,7 @@ const GetInTouchCard = () => {
                 Email me
               </a>
             </div>
-            <div className='m-3 flex-fill d-flex justify-content-center align-items-center'>
+            <div className='m-2 flex-fill d-flex justify-content-center align-items-center'>
               <a className='' href='https://www.linkedin.com/in/bjorntirsen'>
                 <i
                   className='fab fa-linkedin fa-4x'
@@ -32,7 +32,7 @@ const GetInTouchCard = () => {
                 <span className='sr-only'>The LinkedIn logo.</span>
               </a>
             </div>
-            <div className='m-3 flex-fill d-flex justify-content-center align-items-center'>
+            <div className='m-2 flex-fill d-flex justify-content-center align-items-center'>
               <a className='' href='https://github.com/bjorntirsen'>
                 <i className='fab fa-github fa-4x' title='The GitHub logo.'></i>
                 <span className='sr-only'>The GitHub logo.</span>
