@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card, Col } from 'react-bootstrap';
+import ImageModal from '../UI/ImageModal';
 
 import Modal from '../UI/Modal';
 
@@ -46,6 +47,12 @@ const ProjectCard = (props) => {
             <a href={props.values.githubRepo} className='btn btn-primary m-1'>
               GitHub Repo
             </a>
+          ) : null}
+          {props.values.images.length > 0 ? (
+            <ImageModal
+              title={`Images from ${props.values.title}`}
+              values={props.values}
+            />
           ) : null}
         </Card.Footer>
       </Card>
