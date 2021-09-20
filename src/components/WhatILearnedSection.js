@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './WhatILearnedModal.module.css';
+import classes from './WhatILearnedSection.module.css';
 
 const WhatILearnedSection = (props) => {
   return (
