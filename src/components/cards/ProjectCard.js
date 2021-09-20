@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Card, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import ImageModal from '../UI/ImageModal';
 
 import Modal from '../UI/Modal';
+import Card from './Card';
 
 import classes from './ProjectCard.module.css';
 
@@ -18,21 +19,25 @@ const ProjectCard = (props) => {
 
   return (
     <Col>
-      <Card className='h-100 bg-light'>
-        <Card.Header className='text-center'>{formattedDate}</Card.Header>
-        <img
-          src={props.values.imageCoverUrl}
-          className='card-img-top'
-          alt={props.values.title}
-        />
-        <Card.Body className={`text-center ${classes.bg_lighter}`}>
-          <h5 className='card-title text-uppercase font-monospace fw-bold'>
+      <Card className='h-100 d-flex flex-column'>
+        <div className={`${classes.header} text-center p-2`}>
+          <p className={classes.date}>{formattedDate}</p>
+          <img
+            src={props.values.imageCoverUrl}
+            className='card-img-top'
+            alt={props.values.title}
+          />
+          <h5 className='card-title text-uppercase font-monospace fw-bold pt-3'>
             {props.values.title}
           </h5>
-          <h6 className='card-title text-uppercase'>{props.values.subtitle}</h6>
-          <p className='card-text '>{props.values.description}</p>
-        </Card.Body>
-        <Card.Footer className='text-center'>
+          <h6 className='card-title text-uppercase pb-3'>
+            {props.values.subtitle}
+          </h6>
+        </div>
+        <div className='text-center p-2 flex-grow-1'>
+          <p className=''>{props.values.description}</p>
+        </div>
+        <div className={`${classes.footer} text-center p-2`}>
           {props.values.siteLink ? (
             <a href={props.values.siteLink} className='btn btn-primary m-1'>
               Link To Site
@@ -54,7 +59,7 @@ const ProjectCard = (props) => {
               values={props.values}
             />
           ) : null}
-        </Card.Footer>
+        </div>
       </Card>
     </Col>
   );
