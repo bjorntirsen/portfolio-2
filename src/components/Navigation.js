@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
-  console.log(props.current);
   const onProjects = props.current === 'projects' ? 'active' : '';
   const onAbout = props.current === 'about' ? 'active' : '';
 
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
       <div className='container-fluid'>
-        <Link className='navbar-brand' href='/projects'>
+        <Link className='navbar-brand' to='/projects'>
           Björn Tirsén's Portfolio:
         </Link>
         <button

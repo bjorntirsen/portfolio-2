@@ -19,8 +19,12 @@ const AboutMeCard = () => {
             </p>
           )}
           {presentation.presentation.length > 0 &&
-            presentation.presentation.map((paragraph) => {
-              return <p className={classes.indent}>{paragraph}</p>;
+            presentation.presentation.map((paragraph, index) => {
+              return (
+                <p className={classes.indent} key={index}>
+                  {paragraph}
+                </p>
+              );
             })}
         </div>
       </div>
