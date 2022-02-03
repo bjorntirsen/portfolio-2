@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './LandingPage.module.css';
 
@@ -12,7 +13,7 @@ const LandingPage = () => {
   return (
     <Wrapper>
       <OuterTile forPage='Landing'>
-        <Background forPage='Landing'/>
+        <Background forPage='Landing' />
         <Container className={`${classes.landing_container} bg-light pb-4`}>
           <h1 className='fw-bolder font-monospace pt-4 text-center text-dark text-uppercase'>
             Developing the Developer
@@ -26,7 +27,13 @@ const LandingPage = () => {
             to graduating as a Junior Fullstack Web Developer in May 2022.
           </p>
           <div className='d-flex justify-content-center'>
-            <a className="btn btn-lg btn-primary fw-bold" href="/projects" role="button">Enter</a>
+            <Link
+              className='btn btn-lg btn-primary fw-bold'
+              to='/projects'
+              role='button'
+            >
+              Enter
+            </Link>
           </div>
         </Container>
       </OuterTile>

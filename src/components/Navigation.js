@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
   console.log(props.current);
@@ -8,9 +9,9 @@ const Navigation = (props) => {
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
       <div className='container-fluid'>
-        <a className='navbar-brand' href='/projects'>
+        <Link className='navbar-brand' href='/projects'>
           Björn Tirsén's Portfolio:
-        </a>
+        </Link>
         <button
           className='navbar-toggler'
           type='button'
@@ -25,27 +26,27 @@ const Navigation = (props) => {
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav m-auto mb-2 mb-lg-0'>
             <li className='nav-item'>
-              <a className='nav-link' href='/'>
+              <Link className='nav-link' to='/'>
                 Landing Page
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a
+              <Link
                 className={`nav-link ${onProjects}`}
                 aria-current='page'
-                href='/projects'
+                to='/projects'
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li className='nav-item'>
-              <a
+              <Link
                 className={`nav-link ${onAbout}`}
                 aria-current='page'
-                href='/about'
+                to='/about'
               >
                 About Me
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
