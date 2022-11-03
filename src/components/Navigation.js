@@ -7,7 +7,7 @@ const Navigation = (props) => {
 
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
-      <div className='container-fluid'>
+      <div className='container-lg'>
         <Link className='navbar-brand' to='/projects'>
           Björn Tirsén's Portfolio:
         </Link>
@@ -23,7 +23,7 @@ const Navigation = (props) => {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav m-auto mb-2 mb-lg-0'>
+          <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
             <li className='nav-item'>
               <Link className='nav-link' to='/'>
                 Landing Page
