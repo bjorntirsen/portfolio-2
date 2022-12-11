@@ -39,7 +39,7 @@ const ProjectsPage = () => {
             >
               {Object.entries(projects.projects).map((item) => {
                 const value = item[1];
-                return <ProjectCard key={value._id} values={value} />;
+                return <ProjectCard key={value.id} values={value} />;
               })}
             </Row>
           )}
