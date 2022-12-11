@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ProjectsContext } from './contexts/projects-context';
 import { PresentationContext } from './contexts/presentation-context';
 import AboutPage from './pages/AboutPage';
@@ -48,17 +48,11 @@ function App() {
   return (
     <ProjectsContext.Provider value={{ projects }}>
       <PresentationContext.Provider value={{ presentation }}>
-        <Switch>
-          <Route path='/projects'>
-            <ProjectsPage />
-          </Route>
-          <Route path='/about'>
-            <AboutPage />
-          </Route>
-          <Route path='/'>
-            <LandingPage />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
       </PresentationContext.Provider>
     </ProjectsContext.Provider>
   );
